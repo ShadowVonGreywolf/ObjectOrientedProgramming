@@ -3,7 +3,11 @@
  */
 
 package ro.ugal.temaierarhieclase;
+import java.io.IOException;
 import java.util.*;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author di214
@@ -11,7 +15,7 @@ import java.util.*;
 
 public class TemaIerarhieClase {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
                 
         //Programator angajat = new Programator();
 
@@ -59,7 +63,7 @@ public class TemaIerarhieClase {
         }
         */
         
-        Programator p1 = new Programator("Florin");
+        /*Programator p1 = new Programator("Florin");
         Programator p2 = new Programator("Andrei");
         Programator p3 = new Programator("Catalina");
         Programator p4 = new Programator("Robert");
@@ -112,7 +116,12 @@ public class TemaIerarhieClase {
         for (Map.Entry<String,Programator> entry : mapProgramatori.entrySet())
             System.out.println(entry.getKey() + "/" + entry.getValue());
         System.out.println("Cautare programator MAPS  = ");
-        System.out.println(mapProgramatori.get("Dontu Glontu"));
+        System.out.println(mapProgramatori.get("Dontu Glontu"));*/
+        
+        
+            Programator.citireFisier("TestFile.txt");
+           
+        
         
     }
 }
