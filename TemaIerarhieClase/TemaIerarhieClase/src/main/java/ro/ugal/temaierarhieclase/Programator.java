@@ -130,18 +130,4 @@ class Programator implements Angajat{
     public void esteInPauza() {
         System.out.println("Programatorul" + this.nume + "mai are 5 minute de pauza ");
     }
-    
-    
-   // TRY AND CATCH METHOD 
-    public static void citireFisier(String numeFisier) throws IOException{
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(numeFisier));
-            String linie = reader.readLine();
-                System.out.println(linie);
-            reader.close();
-        } catch (FileNotFoundException ex) {
-            System.out.println("Eroare");
-        }
-      
-    }
 }

@@ -118,10 +118,30 @@ public class TemaIerarhieClase {
         System.out.println("Cautare programator MAPS  = ");
         System.out.println(mapProgramatori.get("Dontu Glontu"));*/
         
-        
-            Programator.citireFisier("TestFile.txt");
-           
-        
-        
+        TryCatch tryCatch = new TryCatch();
+        //- de scris o metoda care acceseaza un fisier si afiseaza prima linie din fisier
+        try{
+        tryCatch.citirePrimaLinie("TestFile.txt");
+        }catch(IOException exceptie){
+           System.out.println("Eroare la citirea fisierului: " + exceptie.getMessage());
+        }
+        //- de scris metoda1 care arunca o exceptie si o trateaza
+        tryCatch.tratareVarstaExceptie(-3);
+        //- de scris metoda2 care arunca o exceptie si o arunca mai departe
+        tryCatch.aruncareExceptie();
+        //- de scris metoda3 care apeleaza metoda2
+        tryCatch.apelareAruncareExceptie();
+        //- de propagat exceptia pana in main si aruncata mai departe din main
+        try{
+            tryCatch.aruncareExceptie();
+        }catch (IOException exception){
+            System.out.println("Exceptie in aruncareExceptie in main:" + exception.getMessage());
+        }
+        //- de prins o exceptie si aruncata o noua exceptie avand ca si cauza exceptia initiala
+        tryCatch.aruncareaUneiNoiExceptii();
+        //- de verificat executia blocului finally in ambele situatii (exceptie aruncata sau fara exceptie)
+        tryCatch.executiaBloculuiFinally(false);
+        tryCatch.executiaBloculuiFinally(true);
+        //- de scris un catch care prinde mai multe tipuri de exceptii
     }
 }
