@@ -52,7 +52,7 @@ public class TryCatch {
             aruncareExceptie();
     }
     public void exceptie()throws CustomException{
-        throw new CustomException("Exceptie");
+        throw new CustomException("Exceptie");//- de creat o exceptie proprie, de aruncat si tratat
     }
     //- de prins o exceptie si aruncata o noua exceptie avand ca si cauza exceptia initiala
     public void aruncareaUneiNoiExceptii(){
@@ -75,5 +75,46 @@ public class TryCatch {
         }           
     }
     //- de scris un catch care prinde mai multe tipuri de exceptii
+    public void maiMulteExceptii(){
+
+         try{   
+            // IndexOutOfBoundsException
+            // String myString = "Hello";
+            // System.out.println(myString.charAt(10)); 
+            
+            //  ClassCastException
+            Object obj = "Hello";
+            Integer num = (Integer) obj;
+
+        } catch (IndexOutOfBoundsException | ClassCastException exception) {
+            System.out.println("Exceptie in maiMulteExceptii ");
+        }
+    }
+    //de scris un bloc cu mai multe catchuri care prind exceptii de tip diferit si le trateaza in mod diferit
+    public void maiMulteCatchuri(){
+        try{   
+            // IndexOutOfBoundsException
+            // String myString = "Hello";
+            // System.out.println(myString.charAt(10)); 
+            
+            //  ClassCastException
+            Object obj = "Hello";
+            Integer num = (Integer) obj;
+
+        } catch (IndexOutOfBoundsException exception) {
+            System.out.println("Exceptie de tipul IndexOutOfBoundsException in maiMulteCatchuri");
+        }catch(ClassCastException exception){
+            System.out.println("Exceptie de tipul ClassCastException in maiMulteCatchuri");
+        }
+    }
+    //- de create o exceptie unchecked, de aruncat si tratat
     
+    public void exceptieUnchecked(){
+        try {
+            int rezultat = 10 / 0;  // Dividing by zero causes ArithmeticException
+            System.out.println("Rezultat : " + rezultat);
+        } catch (RuntimeException eexception) {
+            System.out.println("Exceptie unchecked in exceptieUnchecked");
+        }
+    }
 }

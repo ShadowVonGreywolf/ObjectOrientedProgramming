@@ -120,7 +120,7 @@ public class TemaIerarhieClase {
         
         TryCatch tryCatch = new TryCatch();
         //- de scris o metoda care acceseaza un fisier si afiseaza prima linie din fisier
-        try{
+        /*try{
         tryCatch.citirePrimaLinie("TestFile.txt");
         }catch(IOException exceptie){
            System.out.println("Eroare la citirea fisierului: " + exceptie.getMessage());
@@ -143,5 +143,10 @@ public class TemaIerarhieClase {
         tryCatch.executiaBloculuiFinally(false);
         tryCatch.executiaBloculuiFinally(true);
         //- de scris un catch care prinde mai multe tipuri de exceptii
+        tryCatch.maiMulteExceptii();
+        //de scris un bloc cu mai multe catchuri care prind exceptii de tip diferit si le trateaza in mod diferit
+        tryCatch.maiMulteCatchuri();*/
+        //- de create o exceptie unchecked, de aruncat si tratat
+        tryCatch.exceptieUnchecked();
     }
 }
